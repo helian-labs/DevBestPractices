@@ -1,0 +1,80 @@
+好的，以下是为您生成的50个Java和Spring Boot常用技术知识点：
+
+1.  **Java 基础**：
+    * JVM（Java 虚拟机）
+    * JRE（Java 运行时环境）
+    * JDK（Java 开发工具包）
+    * 面向对象编程（OOP）概念：封装、继承、多态
+    * 异常处理（try-catch-finally, throws）
+    * 集合框架（List, Set, Map）
+    * 多线程与并发（Thread, Runnable, ExecutorService）
+    * 泛型
+    * 反射
+    * IO 流（InputStream, OutputStream, Reader, Writer）
+    * NIO（New IO）
+    * Lambda 表达式与 Stream API
+    * Optional 类
+    * 日期与时间 API（java.time.*）
+    * 设计模式（单例、工厂、代理、策略等）
+
+2.  **Spring 核心**：
+    * IoC（控制反转）容器
+    * DI（依赖注入）
+    * AOP（面向切面编程）
+    * Bean 的生命周期
+    * Spring EL（Spring Expression Language）
+    * 事件监听机制
+
+3.  **Spring Boot 特性**：
+    * 自动配置（Auto-configuration）
+    * 起步依赖（Starter Dependencies）
+    * 内嵌式 Web 服务器（Tomcat, Jetty, Undertow）
+    * Spring Boot Actuator
+    * 外部化配置（application.properties/yml）
+    * Profile（环境配置）
+    * Spring Boot CLI
+    * Jar vs War 包
+    * 健康检查与监控
+
+4.  **数据访问**：
+    * Spring Data JPA
+    * Spring JDBC
+    * MyBatis
+    * 事务管理（@Transactional）
+    * 数据库连接池（HikariCP, Druid）
+    * ORM（对象关系映射）概念
+
+5.  **Web 开发**：
+    * Spring MVC
+    * RESTful API 设计原则
+    * 控制器（@RestController, @Controller）
+    * 请求映射（@RequestMapping, @GetMapping, @PostMapping 等）
+    * 请求参数绑定（@RequestParam, @PathVariable, @RequestBody）
+    * 响应体（@ResponseBody）
+    * 拦截器（Interceptor）
+    * 过滤器（Filter）
+    * 跨域（CORS）
+    * 统一异常处理（@ControllerAdvice, @ExceptionHandler）
+
+6.  **安全**：
+    * Spring Security
+    * 认证（Authentication）
+    * 授权（Authorization）
+    * JWT（JSON Web Token）
+
+7.  **微服务相关**：
+    * 服务注册与发现（Eureka, Consul, Nacos）
+    * 负载均衡（Ribbon, LoadBalancer）
+    * API 网关（Spring Cloud Gateway, Zuul）
+    * 熔断与降级（Hystrix, Resilience4j）
+    * 分布式配置中心（Spring Cloud Config, Nacos Config）
+    * 分布式事务（Seata）
+
+8.  **测试**：
+    * JUnit
+    * Mockito
+    * Spring Boot Test
+
+9.  **其他**：
+    * Logback/Log4j2 日志框架
+    * Maven/Gradle 构建工具
