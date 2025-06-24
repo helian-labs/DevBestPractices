@@ -2,7 +2,7 @@
 
 > 高效、安全、零反射的 Java Bean 映射框架
 
-[MapStruct 官网](https://mapstruct.org/)
+- [MapStruct 官网](https://mapstruct.org/)
 
 ## 一、MapStruct 概述
 
