@@ -7,11 +7,6 @@ Checklist
 好的，以下是为您生成的50个Java和Spring Boot常用技术知识点：
 
 1.  **Java 基础**：
-    * JVM（Java 虚拟机）
-    * JRE（Java 运行时环境）
-    * JDK（Java 开发工具包）
-    * 面向对象编程（OOP）概念：封装、继承、多态
-    * 异常处理（try-catch-finally, throws）
     * 集合框架（List, Set, Map）
     * 多线程与并发（Thread, Runnable, ExecutorService）
     * 泛型
@@ -76,11 +71,150 @@ Checklist
     * 分布式配置中心（Spring Cloud Config, Nacos Config）
     * 分布式事务（Seata）
 
-8.  **测试**：
-    * JUnit
-    * Mockito
-    * Spring Boot Test
-
 9.  **其他**：
     * Logback/Log4j2 日志框架
     * Maven/Gradle 构建工具
+
+---
+
+以下是为您构建的Java/Spring Boot技术知识框架，涵盖8大核心领域共76个关键技术点，结合主流实践与深度原理，助力架构能力跃升：
+
+### **一、核心原理与机制** 
+1. **IOC/DI实现机制** 
+   - Bean生命周期（实例化→属性注入→Aware接口→初始化→销毁）
+   - 依赖注入方式（构造器/Setter/字段注入的线程安全问题）
+   - 条件化装配（`@Conditional`与`Condition`接口）
+
+2. **AOP深度实践** 
+   - JDK动态代理 vs CGLIB字节码增强
+   - 切点表达式优化（`within()`、`@annotation()`）
+   - 事务管理底层（`TransactionInterceptor`与连接点控制）
+
+3. **Spring Boot自动配置** 
+   - `spring.factories`加载机制
+   - `@EnableAutoConfiguration`的`ImportSelector`链式调用
+   - 条件注解组合策略（`@ConditionalOnClass`+`@ConditionalOnProperty`）
+
+4. **启动流程精解** 
+   - `SpringApplication.run()`七阶段模型（初始化→监听器触发→上下文准备→Bean加载）
+   - 嵌入式Tomcat启动流程（`TomcatServletWebServerFactory`）
+   - 环境变量优先级（命令行 > 系统属性 > `application.yml`）
+
+---
+
+### **二、数据持久化技术栈** 
+| 技术点          | 关键技术描述                  | 实现机制示例               |
+|-----------------|-----------------------------|--------------------------|
+| **JPA高级特性** | 实体状态管理（Transient/Managed/Detached） | `EntityManager`持久化上下文 |
+| **MyBatis优化** | 二级缓存集成Redis            | `CacheExecutor`装饰器模式   |
+| **多数据源**    | 动态路由（`AbstractRoutingDataSource`） | 线程本地变量切换数据源      |
+| **Redis场景**   | 分布式锁（Redisson `RLock`） | Lua脚本+看门狗续期机制     |
+
+---
+
+### **三、Web与API开发**
+1. **RESTful架构**
+   - HATEOAS实现（`ResourceAssembler`与`Link`构建）
+   - 全局异常处理（`@ControllerAdvice`统一封装400/500错误）
+   - 接口版本管理（URL路径 vs Accept Header）
+
+2. **响应式编程**
+   - WebFlux背压处理（`Flux.bufferTimeout()`）
+   - RouterFunction替代`@Controller`
+   - Netty事件循环模型（Boss/Worker线程组）
+
+3. **模板引擎**
+   - Thymeleaf安全渲染（`th:utext`防XSS）
+   - 服务端片段缓存（`Spring Cache`+`@Cacheable`）
+
+---
+
+### **四、安全与运维保障** 
+1. **认证授权**
+   - OAuth2.0四种模式（密码式/客户端凭证优先）
+   - JWT深度优化（无状态会话 + Redis黑名单）
+   - RBAC与ABAC权限模型对比
+
+2. **监控体系**
+   - Actuator端点定制（`HealthIndicator`自定义检测）
+   - Micrometer指标导出（Prometheus格式适配）
+   - 分布式追踪（TraceID跨服务传递）
+
+3. **日志治理**
+   - MDC实现请求链路追踪（`Logback` `%X{traceId}`）
+   - ELK栈结构化日志（Filebeat收集 → Logstash过滤）
+
+---
+
+### **五、架构设计进阶** 
+1. **微服务治理**
+   - 服务雪崩防护（Sentinel熔断规则/慢调用比例）
+   - 配置中心热更新（Nacos `@RefreshScope`动态刷新）
+   - 分布式事务（Seata AT模式回滚日志机制）
+
+2. **消息驱动**
+   - 消息最终一致性（本地事件表 + RocketMQ事务消息）
+   - Kafka消费者重平衡策略（`RangeAssignor` vs `RoundRobin`）
+
+3. **缓存策略**
+   - 多级缓存架构（Caffeine本地缓存 → Redis分布式缓存）
+   - 缓存击穿解决方案（互斥锁 vs 逻辑过期）
+
+---
+
+### **六、云原生与DevOps** 
+1. **容器化**
+   - Docker多阶段构建（分离编译/运行环境）
+   - Kubernetes探针配置（`livenessProbe`自动恢复）
+
+2. **持续交付**
+   - GitLab流水线（JAR构建 → 镜像推送 → K8s滚动更新）
+   - Helm应用模板化（`values.yaml`环境差异化配置）
+
+3. **服务网格**
+   - Istio流量管理（VirtualService路由分流）
+   - Envoy边车代理（mTLS双向认证）
+
+---
+
+### **七、前沿技术融合** 
+1. **响应式系统**
+   - RSocket双向通信（替代HTTP API）
+   - Reactor调度器优化（`publishOn`切换线程池）
+
+2. **Serverless架构**
+   - Spring Native（GraalVM原生镜像编译）
+   - FaaS冷启动优化（预留实例模式）
+
+3. **数据密集型应用**
+   - 增量检查点（Flink + Spring Boot状态管理）
+   - 向量数据库集成（RedisSearch相似度检索）
+
+---
+
+### **八、性能调优终极方案** 
+```java
+// JVM层优化示例
+@Configuration
+public class JvmConfig {
+    @Bean
+    public TomcatServletWebServerFactory tomcatFactory() {
+        TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory();
+        factory.addConnectorCustomizers(connector -> {
+            // 启用NIO2协议
+            connector.setProperty("protocol", "org.apache.coyote.http11.Http11Nio2Protocol"); 
+            // 调整工作线程数
+            executor.setMaxThreads(200); 
+        });
+        return factory;
+    }
+}
+```
+**关键调优点**：
+- GC策略：G1 `MaxGCPauseMillis`控制停顿时间
+- 线程池：Tomcat `maxThreads` = (核心数 * 50) + 缓冲队列
+- 零拷贝：Netty `FileRegion`减少内核拷贝
+
+---
+
+> **架构师成长路径**：从掌握自动配置原理 → 设计多级缓存架构 → 实现百万级IM系统（Netty+WebSocket） → 主导云原生改造。建议每季度深耕一个模块，配合源码阅读（Spring Boot启动流程、Netty的Pipeline机制）。**永远保持对底层机制的敬畏**，这是区分普通开发者与架构师的核心标志。
